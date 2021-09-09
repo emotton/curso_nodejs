@@ -20,7 +20,7 @@ function espera_ai20(n){
         setTimeout(function () {
             console.log(`[${n}] obrigado por aguardar (20) ...`)
             reject("zuou tudo")
-        }, 10000);
+        }, 20000);
     })
 }
 

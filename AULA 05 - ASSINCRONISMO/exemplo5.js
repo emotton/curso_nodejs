@@ -17,7 +17,7 @@ lerArquivo('./arquivo2.txt').then((dados)=>{
     lerArquivo('./arquivo2.txt').then((dados)=>{
         console.log('\n************ ARQUIVO[2] ***********\n')
         console.log(dados);
+        console.log('************** Ao final exibe essa linha ******************')
     })
 })
 
-console.log('************** Ao final exibe essa linha ******************')

@@ -5,7 +5,7 @@ const lerArquivo = file => new Promise((resolve, reject) =>{
         if(err){
             reject(err);
         }
-        resolve(data);
+        resolve({ data: data, status: true});
     });
 });
 
@@ -14,9 +14,9 @@ async function init(){
         const dados1 = await lerArquivo('./arquivo2.txt')
         const dados2 = await lerArquivo('./arquivo1.txt')
         console.log('\n************ ARQUIVO[1] ***********\n')
-        console.log(dados1);
+        console.log(dados1.data);
         console.log('\n************ ARQUIVO[2] ***********\n')
-        console.log(dados2);
+        console.log(dados2.data);
         console.log('************** Ao final exibe essa linha ******************')
     } catch(err){
         console.log("Deu erro : ", err)

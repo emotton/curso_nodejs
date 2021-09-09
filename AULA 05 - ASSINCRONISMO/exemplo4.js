@@ -11,7 +11,9 @@ const lerArquivo = file => new Promise((resolve, reject) =>{
 
 
 console.log('\n************ ARQUIVO[1] ***********\n')
-console.log(lerArquivo('./arquivo2.txt'));
+
+const dados = lerArquivo('./arquivo2.txt')
+console.log(dados);
 
 console.log('\n************ ARQUIVO[2] ***********\n')
 console.log(lerArquivo('./arquivo1.txt'));

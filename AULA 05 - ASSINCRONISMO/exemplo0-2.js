@@ -12,4 +12,3 @@ espera_ai().then(()=>{
     console.log('ao final, volte sempre ...')
 })
 
-
