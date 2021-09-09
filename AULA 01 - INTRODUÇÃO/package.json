@@ -1,0 +1,14 @@
+{
+  "name": "aula01",
+  "version": "1.0.0",
+  "description": "Aula 01",
+  "main": "funcoes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eduardo Motton",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

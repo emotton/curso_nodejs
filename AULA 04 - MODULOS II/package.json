@@ -1,0 +1,14 @@
+{
+  "name": "aula04",
+  "version": "1.0.0",
+  "description": "Aula 04 - modulos II",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eduardo Motton",
+  "license": "ISC",
+  "dependencies": {
+    "node-datediffs": "0.0.1"
+  }
+}

@@ -1,0 +1,45 @@
+-- Variaveis x Escopo
+
+var a = 10;
+
+console.log(a);
+
+{
+    let a = 20;
+    console.log(a);
+}
+
+console.log(a);
+
+=======================================================
+var s = 'eduardo';
+
+console.log(s);
+{
+    let s = 100;
+    console.log(s);
+}
+console.log(s);
+
+========================================================
+var s = 'eduardo';
+
+function exibir(s){
+    s = 'Ola ' + s;
+    console.log(s);
+}
+
+exibir(s);
+
+console.log(s);
+
+========================================================
+var f = function(){
+    console.log('ola');
+}
+
+function chamar(fff){
+    fff();
+}
+
+chamar(f);
