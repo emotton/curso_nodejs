@@ -17,9 +17,10 @@ function espera_ai10(){
 
 const ret1 = espera_ai5()
 const ret2 = espera_ai10()
+const ret3 = espera_ai10()
 
-Promise.all([ret1, ret2]).then((valores)=>{
-    console.log(valores[0], valores[1])
+Promise.all([ret1, ret2, ret3]).then((valores)=>{
+    console.log(valores)
 })
 
 
