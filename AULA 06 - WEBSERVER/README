@@ -36,3 +36,7 @@ npm i consign (Analise de uma novidade)
 npm i serve-favicon
 - Colocar imagem
 - Demonstrar acessando : http://localhost:3000/images/highlander.jpeg
+
+
+CURIOSIDADES:
+https://www.katacoda.com/courses/nodejs/playground
