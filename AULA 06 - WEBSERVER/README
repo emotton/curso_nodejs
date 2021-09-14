@@ -1,5 +1,6 @@
 Baixar : Postman
 https://www.postman.com/downloads/
+https://hub.docker.com/editions/community/docker-ce-desktop-windows
 
 #Exemplo1
 - Webserver puro, sem nenhum módulo externo
@@ -20,4 +21,4 @@ npm i nodemon -g
 
 ->
 npm i body-parser
-npm i consign
+npm i consign (Analise de uma novidade)
