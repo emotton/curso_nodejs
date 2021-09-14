@@ -2,10 +2,15 @@ Baixar : Postman
 https://www.postman.com/downloads/
 https://hub.docker.com/editions/community/docker-ce-desktop-windows
 
-#Exemplo1
+AULA 06 - CRIAÇÃO :
+- WEBSERVER
+- API
+- APP WEB
+
+#Exemplo1 (Web Server Puro)
 - Webserver puro, sem nenhum módulo externo
 
-#Exemplo2
+#Exemplo2 (Web Server com express)
 - Utilizando o "express"
 -> 
 npm init -y
@@ -15,7 +20,7 @@ npm i express
 Configurar package.json
 npm i nodemon -g
 
-#Exemplo3
+#Exemplo3 (Web Server API)
 - Demonstrar separação de rotas
 - Alterar o package.json
 
@@ -23,8 +28,10 @@ npm i nodemon -g
 npm i body-parser
 npm i consign (Analise de uma novidade)
 
-#Exemplo4
+#Exemplo4 (Global)
 - ambiente global da app
+
+#Exemplo5 (Web Server APP x API)
 ->
 npm i serve-favicon
 - Colocar imagem
