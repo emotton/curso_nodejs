@@ -1,3 +1,6 @@
+Baixar : Postman
+https://www.postman.com/downloads/
+
 #Exemplo1
 - Webserver puro, sem nenhum módulo externo
 
@@ -17,3 +20,4 @@ npm i nodemon -g
 
 ->
 npm i body-parser
+npm i consign
