@@ -25,3 +25,7 @@ npm i consign (Analise de uma novidade)
 
 #Exemplo4
 - ambiente global da app
+->
+npm i serve-favicon
+- Colocar imagem
+- Demonstrar acessando : http://localhost:3000/images/highlander.jpeg
