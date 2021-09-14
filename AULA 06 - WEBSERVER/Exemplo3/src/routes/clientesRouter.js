@@ -1,20 +1,17 @@
 const express = require('express');
 const router = express.Router();
 
+// Services
+const {
+    getClientes, getClienteById
+} = require('../services/clientesService');
+
 router.get("/", (req, res)=>{
-    res.send({clientes: global.clientes})
+    res.send({clientes: getClientes()})
 })
 
 router.get("/:id", (req, res)=>{
-
-    let cliente;
-    global.clientes.forEach(c => {
-        if(c.id == req.params.id){
-            cliente = c
-        }
-    });
-
-    res.send(cliente)
+    res.send(getClienteById(req.params.id))
 })
 
 router.post("/", (req, res)=>{

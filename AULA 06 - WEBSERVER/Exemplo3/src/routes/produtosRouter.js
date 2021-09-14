@@ -1,20 +1,17 @@
 const express = require('express');
 const router = express.Router();
 
+// Services
+const {
+   getProdutos, getProdutoById
+} = require('../services/produtosService');
+
 router.get("/", (req, res)=>{
-    res.send({produtos: global.produtos})
+    res.send({produtos: getProdutos()})
 })
 
 router.get("/:id", (req, res)=>{
-
-    let produto;
-    global.produtos.forEach(p => {
-        if(p.id == req.params.id){
-            produto = p
-        }
-    });
-
-    res.send(produto)
+    res.send(getProdutoById(req.params.id))
 })
 
 router.post("/", (req, res)=>{
