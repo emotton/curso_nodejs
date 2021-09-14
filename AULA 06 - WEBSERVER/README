@@ -1,0 +1,19 @@
+#Exemplo1
+- Webserver puro, sem nenhum módulo externo
+
+#Exemplo2
+- Utilizando o "express"
+-> 
+npm init -y
+npm i express
+
+->
+Configurar package.json
+npm i nodemon -g
+
+#Exemplo3
+- Demonstrar separação de rotas
+- Alterar o package.json
+
+->
+npm i body-parser
