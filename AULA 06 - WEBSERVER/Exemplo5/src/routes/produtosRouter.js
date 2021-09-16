@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router();
 
 // Services
-const {
-   getProdutos, getProdutoById
-} = require('../services/produtosService');
+const {getProdutos, getProdutoById,
+       insertProduto, updateProdutoById,
+    deleteProdutoById} = require('./../services/produtosService')
 
 router.get("/", (req, res)=>{
     res.send({produtos: getProdutos()})
@@ -16,19 +16,18 @@ router.get("/:id", (req, res)=>{
 
 router.post("/", (req, res)=>{
     console.log(req.body)
-    global.produtos.push(req.body)
+    insertProduto(req.body)
     res.send({success: true})
 })
 
 router.put("/:id", (req, res)=>{
-    console.log(req.params.id+ " quer ser alterado !")
-    console.log(req.body)
+     console.log(req.body)
+     updateProdutoById(req.params.id, req.body)
     res.send({success: true})
 })
 
 router.delete("/:id", (req, res)=>{
-    console.log(req.params.id+ " quer ser excluido !")
+    deleteProdutoById(req.params.id)
     res.send({success: true})
 })
-
 module.exports = router;

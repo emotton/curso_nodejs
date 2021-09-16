@@ -2,9 +2,10 @@ const express = require('express');
 const router = express.Router();
 
 // Services
-const {
-    getClientes, getClienteById
-} = require('../services/clientesService');
+const {getClientes, getClienteById, 
+    insertCliente, updateClienteById,
+    deleteClienteById} = 
+    require('./../services/clientesService')
 
 router.get("/", (req, res)=>{
     res.send({clientes: getClientes()})
@@ -16,18 +17,18 @@ router.get("/:id", (req, res)=>{
 
 router.post("/", (req, res)=>{
     console.log(req.body)
-    global.clientes.push(req.body)
+    insertCliente(req.body)
     res.send({success: true})
 })
 
 router.put("/:id", (req, res)=>{
-    console.log(req.params.id+ " quer ser alterado !")
     console.log(req.body)
+    updateClienteById(req.params.id, req.body)
     res.send({success: true})
 })
 
 router.delete("/:id", (req, res)=>{
-    console.log(req.params.id+ " quer ser excluido !")
+    deleteClienteById(req.params.id)
     res.send({success: true})
 })
 

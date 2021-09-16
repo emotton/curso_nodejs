@@ -1,12 +1,14 @@
 const express = require('express')
 const app = express()
+
 // const bodyParser = require('body-parser');
 const path = require('path');
 const favicon = require('serve-favicon');
 
-// Rotas
-const produtosRouter = require('./routes/produtosRouter');
-const clientesRouter = require('./routes/clientesRouter');
+
+// Routes
+const clientesRouter = require('./routes/clientesRouter')
+const produtosRouter = require('./routes/produtosRouter')
 
 // Dados Mock
 global.produtos = [
@@ -20,10 +22,6 @@ global.clientes = [
     {id: 2, nome: 'Henrique'},
     {id: 3, nome: 'Akio'}
 ]
-
-app.get("/", (req, res)=>{
-    res.send("Hello Mundo Web!")
-})
 
 // Configurações
 /*
@@ -39,9 +37,13 @@ app.use(express.urlencoded({ extended: true}))
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'icon-digicon.GIF')));
 
-// Setar Rotas
-app.use('/produtos', produtosRouter);
+app.get("/", (req, res)=>{
+    res.send("Hello Mundo Web!")
+})
+
+// Definição das rotas na app
 app.use('/clientes', clientesRouter);
+app.use('/produtos', produtosRouter);
 
 app.listen(3000, ()=>{
     console.log('Servidor no ar na porta 3000')

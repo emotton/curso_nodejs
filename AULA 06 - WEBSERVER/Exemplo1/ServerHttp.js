@@ -2,8 +2,13 @@ const http = require('http')
 const port = 3000
 
 const requestHandler = (request, response) => {
+    if(request.url == "/banana"){
+        response.end('Banana eh voce')
+    } else  if(request.url == "/abobrinha"){
+        response.end('desculpe so tenho xuxu')
+    }
     console.log(request.url)
-    response.end('Hello Node.js Server do Eduardo !')
+    // response.end('Hello Node.js Server do Akio ! '+request.url)
 }
 
 const server = http.createServer(requestHandler)

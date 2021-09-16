@@ -2,10 +2,10 @@
   "name": "Exemplo2",
   "version": "1.0.0",
   "description": "",
-  "main": "WebServer.js",
+  "main": "index.js",
   "scripts": {
-    "prod": "node WebServer.js",
-    "dev": "nodemon WebServer.js"
+    "dev": "nodemon WebServer.js",
+    "prod": "node WebServer.js"
   },
   "keywords": [],
   "author": "",

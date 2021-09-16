@@ -1,10 +1,9 @@
 const express = require('express')
 const app = express()
-// const bodyParser = require('body-parser');
 
-// Rotas
-const produtosRouter = require('./routes/produtosRouter');
-const clientesRouter = require('./routes/clientesRouter');
+// Routes
+const clientesRouter = require('./routes/clientesRouter')
+const produtosRouter = require('./routes/produtosRouter')
 
 // Dados Mock
 global.produtos = [
@@ -23,19 +22,9 @@ app.get("/", (req, res)=>{
     res.send("Hello Mundo Web!")
 })
 
-// Configurações
-/*
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-app.use(bodyParser.json());
-*/
-app.use(express.json())
-app.use(express.urlencoded({ extended: true}))
-
-// Setar Rotas
-app.use('/produtos', produtosRouter);
+// Definição das rotas na app
 app.use('/clientes', clientesRouter);
+app.use('/produtos', produtosRouter);
 
 app.listen(3000, ()=>{
     console.log('Servidor no ar na porta 3000')

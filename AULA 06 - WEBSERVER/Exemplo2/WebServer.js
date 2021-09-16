@@ -1,11 +1,14 @@
 const express = require('express')
+const { Http2ServerRequest } = require('http2')
+const { fileURLToPath } = require('url')
 const app = express()
 
-app.get("/", (req, res)=>{
-    res.send("Hello Mundo Web!")
+// Mapear uma rota
+app.get("/", (req, res) =>{
+    res.redirect('/clientes')
 })
 
-app.get("/produtos", (req, res)=>{
+app.get("/produtos", (req, res) =>{
     res.send({produtos: [
         {id: 1, nome: 'Notebook i7', valor: 8500.00},
         {id: 2, nome: 'Notebook i5', valor: 6500.00},
@@ -13,7 +16,7 @@ app.get("/produtos", (req, res)=>{
     ]})
 })
 
-app.get("/clientes", (req, res)=>{
+app.get("/clientes", (req, res) =>{
     res.send({clientes: [
         {id: 1, nome: 'Eduardo'},
         {id: 2, nome: 'Henrique'},
@@ -26,3 +29,4 @@ app.get("/clientes", (req, res)=>{
 app.listen(3000, ()=>{
     console.log('Servidor no ar na porta 3000')
 })
+
