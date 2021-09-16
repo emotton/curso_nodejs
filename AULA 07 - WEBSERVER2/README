@@ -1,2 +1,12 @@
 AULA 07
 - Continuação de Web Server, ajustando para virar um site
+
+***
+- Favicon
+- Pasta pública
+- Utilização de Template Engine (handlebars)
+- Bower
+
+npm i bower
+bower install bootstrap --save
+bower install jquery --save

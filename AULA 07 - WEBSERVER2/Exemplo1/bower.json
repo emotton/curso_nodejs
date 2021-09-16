@@ -1,0 +1,22 @@
+{
+  "name": "Exemplo1",
+  "description": "",
+  "main": "WebServer.js",
+  "authors": [
+    "emotton <emotton@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/emotton/curso_nodejs",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/public/lib/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "bootstrap": "^5.1.1"
+  }
+}

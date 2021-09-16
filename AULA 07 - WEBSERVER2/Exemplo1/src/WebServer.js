@@ -4,11 +4,12 @@ const app = express()
 // const bodyParser = require('body-parser');
 const path = require('path');
 const favicon = require('serve-favicon');
-
+const handlebars = require('express-handlebars');
 
 // Routes
-const clientesRouter = require('./routes/clientesRouter')
-const produtosRouter = require('./routes/produtosRouter')
+const homeRouter = require('./routes/homeRouter')
+const clientesRouterAPI = require('./routes/clientesRouterAPI')
+const produtosRouterAPI = require('./routes/produtosRouterAPI')
 
 // Dados Mock
 global.produtos = [
@@ -33,17 +34,28 @@ app.use(bodyParser.json());
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
 
+// layouts
+app.set('views', path.join(__dirname, 'views'));
+var hbs = handlebars.create({
+    defaultLayout: 'main',
+    partialsDir: [path.join(__dirname, 'views/partials')]
+});
+
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
 // public
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'icon-digicon.GIF')));
 
-app.get("/", (req, res)=>{
-    res.send("Hello Mundo Web!")
-})
-
 // Definição das rotas na app
-app.use('/clientes', clientesRouter);
-app.use('/produtos', produtosRouter);
+app.use('/site', homeRouter);
+app.use('/api/clientes', clientesRouterAPI);
+app.use('/api/produtos', produtosRouterAPI);
+
+app.get("/", (req, res)=>{
+    res.redirect('/site')
+})
 
 app.listen(3000, ()=>{
     console.log('Servidor no ar na porta 3000')

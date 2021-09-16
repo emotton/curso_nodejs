@@ -4,7 +4,7 @@ const router = express.Router();
 // Services
 const {getProdutos, getProdutoById,
        insertProduto, updateProdutoById,
-    deleteProdutoById} = require('./../services/produtosService')
+    deleteProdutoById} = require('../services/produtosService')
 
 router.get("/", (req, res)=>{
     res.send({produtos: getProdutos()})
