@@ -3,14 +3,12 @@
 const path = require('path')
 const { babel } = require('@rollup/plugin-babel')
 const { nodeResolve } = require('@rollup/plugin-node-resolve')
-const replace = require('@rollup/plugin-replace')
 const banner = require('./banner.js')
 
 const BUNDLE = process.env.BUNDLE === 'true'
-const ESM = process.env.ESM === 'true'
 
-let fileDest = `bootstrap${ESM ? '.esm' : ''}`
-const external = ['@popperjs/core']
+let fileDest = 'bootstrap.js'
+const external = ['jquery', 'popper.js']
 const plugins = [
   babel({
     // Only transpile our source code
@@ -20,37 +18,27 @@ const plugins = [
   })
 ]
 const globals = {
-  '@popperjs/core': 'Popper'
+  jquery: 'jQuery', // Ensure we use jQuery which is always available even in noConflict mode
+  'popper.js': 'Popper'
 }
 
 if (BUNDLE) {
-  fileDest += '.bundle'
+  fileDest = 'bootstrap.bundle.js'
   // Remove last entry in external array to bundle Popper
   external.pop()
-  delete globals['@popperjs/core']
-  plugins.push(
-    replace({
-      'process.env.NODE_ENV': '"production"',
-      preventAssignment: true
-    }),
-    nodeResolve()
-  )
+  delete globals['popper.js']
+  plugins.push(nodeResolve())
 }
 
-const rollupConfig = {
-  input: path.resolve(__dirname, `../js/index.${ESM ? 'esm' : 'umd'}.js`),
+module.exports = {
+  input: path.resolve(__dirname, '../js/index.js'),
   output: {
     banner,
-    file: path.resolve(__dirname, `../dist/js/${fileDest}.js`),
-    format: ESM ? 'esm' : 'umd',
-    globals
+    file: path.resolve(__dirname, `../dist/js/${fileDest}`),
+    format: 'umd',
+    globals,
+    name: 'bootstrap'
   },
   external,
   plugins
 }
-
-if (!ESM) {
-  rollupConfig.output.name = 'bootstrap'
-}
-
-module.exports = rollupConfig

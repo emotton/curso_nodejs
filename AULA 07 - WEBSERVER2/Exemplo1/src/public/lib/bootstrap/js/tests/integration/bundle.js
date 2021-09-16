@@ -1,6 +1,8 @@
-import { Tooltip } from '../../../dist/js/bootstrap.esm.js'
+import 'popper.js'
+import $ from 'jquery'
+import bootstrap from '../../../dist/js/bootstrap'
 
-window.addEventListener('load', () => {
-  [].concat(...document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    .map(tooltipNode => new Tooltip(tooltipNode))
+$(() => {
+  $('#resultUID').text(bootstrap.Util.getUID('bs'))
+  $('[data-toggle="tooltip"]').tooltip()
 })

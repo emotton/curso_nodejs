@@ -9,73 +9,102 @@
 
 'use strict'
 
-const fs = require('fs').promises
+const fs = require('fs')
 const path = require('path')
-const globby = require('globby')
+const sh = require('shelljs')
 
-const VERBOSE = process.argv.includes('--verbose')
-const DRY_RUN = process.argv.includes('--dry') || process.argv.includes('--dry-run')
-
-// These are the filetypes we only care about replacing the version
-const GLOB = [
-  '**/*.{css,html,js,json,md,scss,txt,yml}'
-]
-const GLOBBY_OPTIONS = {
-  cwd: path.join(__dirname, '..'),
-  gitignore: true
-}
+sh.config.fatal = true
 
 // Blame TC39... https://github.com/benjamingr/RegExp.escape/issues/37
 function regExpQuote(string) {
-  return string.replace(/[$()*+-.?[\\\]^{|}]/g, '\\$&')
+  return string.replace(/[$()*+.?[\\\]^{|}-]/g, '\\$&')
 }
 
 function regExpQuoteReplacement(string) {
   return string.replace(/\$/g, '$$')
 }
 
-async function replaceRecursively(file, oldVersion, newVersion) {
-  const originalString = await fs.readFile(file, 'utf8')
-  const newString = originalString.replace(
-    new RegExp(regExpQuote(oldVersion), 'g'), regExpQuoteReplacement(newVersion)
-  )
+const DRY_RUN = false
 
-  // No need to move any further if the strings are identical
-  if (originalString === newString) {
+function walkAsync(directory, excludedDirectories, fileCallback, errback) {
+  if (excludedDirectories.has(path.parse(directory).base)) {
     return
   }
 
-  if (VERBOSE) {
-    console.log(`FILE: ${file}`)
-  }
+  fs.readdir(directory, (err, names) => {
+    if (err) {
+      errback(err)
+      return
+    }
 
-  if (DRY_RUN) {
-    return
-  }
+    names.forEach(name => {
+      const filepath = path.join(directory, name)
+      fs.lstat(filepath, (err, stats) => {
+        if (err) {
+          process.nextTick(errback, err)
+          return
+        }
 
-  await fs.writeFile(file, newString, 'utf8')
+        if (stats.isDirectory()) {
+          process.nextTick(walkAsync, filepath, excludedDirectories, fileCallback, errback)
+        } else if (stats.isFile()) {
+          process.nextTick(fileCallback, filepath)
+        }
+      })
+    })
+  })
 }
 
-async function main(args) {
-  const [oldVersion, newVersion] = args
+function replaceRecursively(directory, excludedDirectories, allowedExtensions, original, replacement) {
+  original = new RegExp(regExpQuote(original), 'g')
+  replacement = regExpQuoteReplacement(replacement)
+  const updateFile = DRY_RUN ? filepath => {
+    if (allowedExtensions.has(path.parse(filepath).ext)) {
+      console.log(`FILE: ${filepath}`)
+    } else {
+      console.log(`EXCLUDED:${filepath}`)
+    }
+  } : filepath => {
+    if (allowedExtensions.has(path.parse(filepath).ext)) {
+      sh.sed('-i', original, replacement, filepath)
+    }
+  }
 
-  if (!oldVersion || !newVersion) {
-    console.error('USAGE: change-version old_version new_version [--verbose] [--dry[-run]]')
+  walkAsync(directory, excludedDirectories, updateFile, err => {
+    console.error('ERROR while traversing directory!:')
+    console.error(err)
+    process.exit(1)
+  })
+}
+
+function main(args) {
+  if (args.length !== 2) {
+    console.error('USAGE: change-version old_version new_version')
     console.error('Got arguments:', args)
     process.exit(1)
   }
 
-  // Strip any leading `v` from arguments because otherwise we will end up with duplicate `v`s
-  [oldVersion, newVersion].map(arg => arg.startsWith('v') ? arg.slice(1) : arg)
-
-  try {
-    const files = await globby(GLOB, GLOBBY_OPTIONS)
-
-    await Promise.all(files.map(file => replaceRecursively(file, oldVersion, newVersion)))
-  } catch (error) {
-    console.error(error)
-    process.exit(1)
-  }
+  const oldVersion = args[0]
+  const newVersion = args[1]
+  const EXCLUDED_DIRS = new Set([
+    '.git',
+    '_gh_pages',
+    'node_modules',
+    'vendor'
+  ])
+  const INCLUDED_EXTENSIONS = new Set([
+    // This extension whitelist is how we avoid modifying binary files
+    '',
+    '.css',
+    '.html',
+    '.js',
+    '.json',
+    '.md',
+    '.scss',
+    '.txt',
+    '.yml'
+  ])
+  replaceRecursively('.', EXCLUDED_DIRS, INCLUDED_EXTENSIONS, oldVersion, newVersion)
 }
 
 main(process.argv.slice(2))

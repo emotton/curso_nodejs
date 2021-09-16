@@ -34,7 +34,7 @@ h3 {
 }
 
 h4 {
-    color: #ea0506;
+    color: #024c9f;
     font-size: 0.9rem;
     font-weight: bold;
 }
@@ -54,8 +54,21 @@ h4 {
     align-content: space-around;
     justify-content: space-around;
     flex-direction: row;
-    padding: 5px;
 }
+
+.tela {
+    width: 100%;
+    padding: 15px;
+}
+
+.bg-dark2{
+    background-color: #000;
+}
+
+p.textao {
+    text-align: justify;
+    text-justify: inter-word;
+  }
 
 figcaption {
     font-size: 0.5rem;

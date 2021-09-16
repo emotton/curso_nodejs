@@ -16,23 +16,21 @@ const pkg = require('../package.json')
 
 const versionShort = pkg.config.version_short
 const distFolder = `bootstrap-${pkg.version}-examples`
-const rootDocsDir = '_site'
+const rootDocsDir = '_gh_pages'
 const docsDir = `${rootDocsDir}/docs/${versionShort}/`
 
 // these are the files we need in the examples
 const cssFiles = [
   'bootstrap.min.css',
-  'bootstrap.min.css.map',
-  'bootstrap.rtl.min.css',
-  'bootstrap.rtl.min.css.map'
+  'bootstrap.min.css.map'
 ]
 const jsFiles = [
   'bootstrap.bundle.min.js',
   'bootstrap.bundle.min.js.map'
 ]
 const imgFiles = [
-  'bootstrap-logo.svg',
-  'bootstrap-logo-white.svg'
+  'bootstrap-outline.svg',
+  'bootstrap-solid.svg'
 ]
 
 sh.config.fatal = true

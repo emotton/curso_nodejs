@@ -8,9 +8,7 @@
       "outline": "none"
     },
     "function-disallowed-list": [
-      "calc",
-      "lighten",
-      "darken"
+      "calc"
     ],
     "property-disallowed-list": [
       "border-radius",
@@ -19,13 +17,6 @@
       "border-bottom-right-radius",
       "border-bottom-left-radius",
       "transition"
-    ],
-    "scss/dollar-variable-default": [
-      true,
-      {
-        "ignore": "local"
-      }
-    ],
-    "scss/selector-no-union-class-name": true
+    ]
   }
 }

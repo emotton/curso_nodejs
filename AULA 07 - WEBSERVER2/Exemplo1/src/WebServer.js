@@ -7,9 +7,9 @@ const favicon = require('serve-favicon');
 const handlebars = require('express-handlebars');
 
 // Routes
-const homeRouter = require('./routes/homeRouter')
-const clientesRouterAPI = require('./routes/clientesRouterAPI')
-const produtosRouterAPI = require('./routes/produtosRouterAPI')
+const homeRouter = require('./routes/site/homeRouter')
+const clientesRouterAPI = require('./routes/api/clientesRouterAPI')
+const produtosRouterAPI = require('./routes/api/produtosRouterAPI')
 
 // Dados Mock
 global.produtos = [
@@ -46,15 +46,15 @@ app.set('view engine', 'handlebars');
 
 // public
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(favicon(path.join(__dirname, 'public', 'images', 'icon-digicon.GIF')));
+app.use(favicon(path.join(__dirname, 'public', 'images', 'parkhenri-icone.gif')));
 
 // Definição das rotas na app
-app.use('/site', homeRouter);
+app.use('/park-henri', homeRouter);
 app.use('/api/clientes', clientesRouterAPI);
 app.use('/api/produtos', produtosRouterAPI);
 
 app.get("/", (req, res)=>{
-    res.redirect('/site')
+    res.redirect('/park-henri')
 })
 
 app.listen(3000, ()=>{

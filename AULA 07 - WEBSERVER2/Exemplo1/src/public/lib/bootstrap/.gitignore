@@ -1,6 +1,6 @@
 # Ignore docs files
-/_site/
-# Hugo resources folder
+/_gh_pages/
+# Hugo folders
 /resources/
 
 # Numerous always-ignore extensions
