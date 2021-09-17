@@ -15,13 +15,11 @@ router.get("/:id", (req, res)=>{
 })
 
 router.post("/", (req, res)=>{
-    console.log(req.body)
     insertProduto(req.body)
     res.send({success: true})
 })
 
 router.put("/:id", (req, res)=>{
-     console.log(req.body)
      updateProdutoById(req.params.id, req.body)
     res.send({success: true})
 })

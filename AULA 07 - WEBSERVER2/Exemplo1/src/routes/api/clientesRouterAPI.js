@@ -16,13 +16,11 @@ router.get("/:id", (req, res)=>{
 })
 
 router.post("/", (req, res)=>{
-    console.log(req.body)
     insertCliente(req.body)
     res.send({success: true})
 })
 
 router.put("/:id", (req, res)=>{
-    console.log(req.body)
     updateClienteById(req.params.id, req.body)
     res.send({success: true})
 })

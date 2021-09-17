@@ -22,6 +22,10 @@ app.get("/", (req, res)=>{
     res.send("Hello Mundo Web!")
 })
 
+// Configuração
+app.use(express.json())
+app.use(express.urlencoded({ extended: true}))
+
 // Definição das rotas na app
 app.use('/clientes', clientesRouter);
 app.use('/produtos', produtosRouter);
