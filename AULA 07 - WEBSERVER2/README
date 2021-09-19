@@ -10,3 +10,6 @@ AULA 07
 npm i bower
 bower install bootstrap --save
 bower install jquery --save
+
+### STATUS CODE ###
+https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
