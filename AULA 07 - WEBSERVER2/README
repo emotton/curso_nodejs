@@ -11,5 +11,10 @@ npm i bower
 bower install bootstrap --save
 bower install jquery --save
 
+### OPEN API ###
+- Swagger
+- OPEN API 2.0/3.0
+*** Documentação de API (Contratos)
+
 ### STATUS CODE ###
 https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
