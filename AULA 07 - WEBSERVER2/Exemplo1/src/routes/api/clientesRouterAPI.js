@@ -8,16 +8,16 @@ const {getClientes, getClienteById,
     require('../../services/clientesService')
 
 router.get("/", (req, res)=>{
-    res.send({clientes: getClientes()})
+    res.status(200).json(getClientes())
 })
 
 router.get("/:id", (req, res)=>{
-    res.send(getClienteById(req.params.id))
+    res.status(200).json(getClienteById(req.params.id))
 })
 
 router.post("/", (req, res)=>{
     insertCliente(req.body)
-    res.send({success: true})
+    res.status(201).json({success: true})
 })
 
 router.put("/:id", (req, res)=>{

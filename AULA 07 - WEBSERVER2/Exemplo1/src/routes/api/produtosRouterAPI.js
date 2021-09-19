@@ -7,16 +7,16 @@ const {getProdutos, getProdutoById,
     deleteProdutoById} = require('../../services/produtosService')
 
 router.get("/", (req, res)=>{
-    res.send({produtos: getProdutos()})
+    res.status(200).json(getProdutos())
 })
 
 router.get("/:id", (req, res)=>{
-    res.send(getProdutoById(req.params.id))
+    res.status(200).json(getProdutoById(req.params.id))
 })
 
 router.post("/", (req, res)=>{
     insertProduto(req.body)
-    res.send({success: true})
+    res.status(201).json({success: true})
 })
 
 router.put("/:id", (req, res)=>{
