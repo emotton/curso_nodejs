@@ -21,9 +21,10 @@ https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
 
 AGENDA
 ======
-1) Express e Paginas estaticas
-1.1) Favicon
-2) Conceito de Template Engine (Handlebars)
-3) Instalar bower (jquery e bootstrap)
-4) HTML, CSS e Bootstrap
-4.1) Flexbox e Grid Layout ?????
+1) Revisão da API x Postman e demonstração do Swagger/OpenAPI
+2) Express e Paginas estaticas
+2.1) Favicon
+3) Conceito de Template Engine (Handlebars)
+4) Instalar bower (jquery e bootstrap)
+5) HTML, CSS e Bootstrap
+5.1) Flexbox e Grid Layout ?????
