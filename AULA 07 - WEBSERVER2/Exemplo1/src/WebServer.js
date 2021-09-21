@@ -8,6 +8,8 @@ const handlebars = require('express-handlebars');
 
 // Routes
 const homeRouter = require('./routes/site/homeRouter')
+const clienteRouter = require('./routes/site/clienteRouter')
+const produtoRouter = require('./routes/site/produtoRouter')
 const clientesRouterAPI = require('./routes/api/clientesRouterAPI')
 const produtosRouterAPI = require('./routes/api/produtosRouterAPI')
 
@@ -44,6 +46,8 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'parkhenri-icone.gif'))
 
 // Definição das rotas na app
 app.use('/park-henri', homeRouter);
+app.use('/park-henri/clientes', clienteRouter);
+app.use('/park-henri/produtos', produtoRouter);
 app.use('/api/clientes', clientesRouterAPI);
 app.use('/api/produtos', produtosRouterAPI);
 

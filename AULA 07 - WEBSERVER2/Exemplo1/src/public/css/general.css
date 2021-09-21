@@ -47,6 +47,11 @@ h4 {
     margin-top: 140px;
 }
 
+.tela {
+    width: 100%;
+    padding: 15px;
+}
+
 .conteudo {
     width: 100%;
     display: flex;
@@ -56,8 +61,8 @@ h4 {
     flex-direction: row;
 }
 
-.tela {
-    width: 100%;
+.conteudo-item {
+    width: calc(50% - 10px);
     padding: 15px;
 }
 
