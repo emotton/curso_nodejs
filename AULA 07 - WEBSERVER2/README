@@ -18,3 +18,10 @@ bower install jquery --save
 
 ### STATUS CODE ###
 https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
+
+AGENDA
+======
+1) Express e Paginas estaticas
+1.1) Favicon
+2) Conceito de Template Engine (Handlebars)
+3) Instalar bower (jquery e bootstrap)
