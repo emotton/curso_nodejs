@@ -1,0 +1,188 @@
+/* RESET */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+nav,
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.9;
+    color: #ea0506;
+}
+
+a:hover {
+    opacity: 1;
+    color: #ea0506;
+}
+
+h1,
+h3 {
+    color: #ea0506;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+h4 {
+    color: #024c9f;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.login {
+    border-radius: 2rem;
+    border-color: #333;
+    border-style: groove;
+    width: 22rem;
+    margin-top: 140px;
+}
+
+.tela {
+    width: 100%;
+    padding: 15px;
+}
+
+.conteudo {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.conteudo-item {
+    width: calc(50% - 10px);
+    padding: 15px;
+}
+
+.bg-dark2{
+    background-color: #000;
+}
+
+p.textao {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+figcaption {
+    font-size: 0.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form {
+    overflow: auto;
+    height: 410px;
+}
+
+caption {
+    caption-side: top;
+    color: #ea0506;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: right;
+}
+
+table {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    padding: 1px 0px 0px 0px;
+    margin: 5px;
+}
+
+thead {
+    flex: 0 0 auto;
+    margin-left: 10px;
+}
+
+tbody {
+    flex: 1 1 auto;
+    display: block;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 432px;
+}
+
+tr {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    padding: 0px 0px 1px 5px;
+}
+
+td {
+    font-family: Arial;
+    font-size: 10pt;
+}
+
+.rodape {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    text-align: center;
+}
+
+.rodape-content {
+    width: 200px;
+}
+
+.rodape-img {
+    width: 101px;
+}
+
+.linha {
+    width: 200px;
+    height: 2px;
+    background-color: #191c03;
+    border: none;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu a::after {
+    transform: rotate(-90deg);
+    position: absolute;
+    right: 6px;
+    top: .8em;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-left: .1rem;
+    margin-right: .1rem;
+}
+
+.dropdown-menu {
+    background-color: #333;
+}
+
+.dropdown-menu a {
+    color: #eee;
+}
+
+div.login {
+    animation-name: fade;
+    animation-duration: 500ms;
+}
+
+form {
+    overflow: hidden;
+}

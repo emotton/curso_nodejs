@@ -1,0 +1,23 @@
+<div class="conteudo-item mx-auto bg-white rounded shadow bordered mt-4">
+    <br />
+    <h4>Produtos</h4>
+    <table class="table table-fixed table-striped">
+        <thead class="thead-dark">
+            <tr class="row">
+                <th class="col-sm-1">#</th>
+                <th class="col-sm-8">Nome</th>
+                <th class="col-sm-3">Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each produtos}}
+            <tr class="row">
+                <td class="col-sm-1">{{id}}</td>
+                <td class="col-sm-8">{{nome}}</td>
+                <td class="col-sm-3">{{valor}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <br>
+</div>
