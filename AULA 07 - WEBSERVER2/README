@@ -3,13 +3,6 @@ AULA 07
 
 ***
 - Favicon
-- Pasta pública
-- Utilização de Template Engine (handlebars)
-- Bower
-
-npm i bower
-bower install bootstrap --save
-bower install jquery --save
 
 ### OPEN API ###
 - Swagger

@@ -5,3 +5,11 @@ AGENDA
 3) HTML, CSS e Bootstrap
 3.1) Flexbox e Grid Layout ?????
 3.2) https://codepen.io/
+
+- Pasta pública
+- Utilização de Template Engine (handlebars)
+- Bower
+
+npm i bower
+bower install bootstrap --save
+bower install jquery --save
