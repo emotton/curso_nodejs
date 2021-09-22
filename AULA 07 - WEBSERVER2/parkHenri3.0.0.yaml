@@ -1,0 +1,206 @@
+openapi: 3.0.0
+info:
+  title: API CURSO NODEJS
+  version: 1.0.0
+paths:
+  /clientes:
+    get:
+      summary: listar clientes
+      operationId: listClientes
+      description: |
+        Obter lista de clientes
+      responses:
+        "200":
+          description: lista de clientes
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Cliente"
+    post:
+      summary: incluir novo cliente
+      description: ""
+      operationId: incluirCliente
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Cliente"
+        required: true
+      responses:
+        "405":
+          description: Invalid input
+  "/clientes/{id}":
+    get:
+      summary: obter cliente pelo ID
+      description: ""
+      operationId: getClienteById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            default: 1
+      responses:
+        "200":
+          description: Cliente encontrado
+          content:
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/Cliente"
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Cliente"
+    put:
+      summary: atualizar cliente pelo ID
+      description: ""
+      operationId: updateClienteById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            default: 1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Cliente"
+      responses:
+        "200":
+          description: Cliente atualizado
+    delete:
+      summary: excluir cliente pelo ID
+      description: ""
+      operationId: deleteClienteById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            default: 1
+      responses:
+        "200":
+          description: Cliente excluido
+  /produtos:
+    get:
+      summary: listar produtos
+      operationId: listProdutos
+      description: |
+        Obter lista de produtos
+      responses:
+        "200":
+          description: lista de produtos
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Produto"
+    post:
+      summary: incluir novo produto
+      description: ""
+      operationId: incluirProduto
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Produto"
+        required: true
+      responses:
+        "405":
+          description: Invalid input
+  "/produtos/{id}":
+    get:
+      summary: obter produto pelo ID
+      description: ""
+      operationId: getProdutoById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            default: 1
+      responses:
+        "200":
+          description: Produto encontrado
+          content:
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/Produto"
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Produto"
+    put:
+      summary: atualizar produto pelo ID
+      description: ""
+      operationId: updateProdutoById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            default: 1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Produto"
+      responses:
+        "200":
+          description: Produto atualizado
+    delete:
+      summary: excluir produto pelo ID
+      description: ""
+      operationId: deleteProdutoById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            default: 1
+      responses:
+        "200":
+          description: Produto excluido
+servers:
+  - url: http://localhost:3000/api
+components:
+  schemas:
+    Cliente:
+      type: object
+      required:
+        - id
+        - nome
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 1
+        nome:
+          type: string
+          example: Cliente 1
+    Produto:
+      type: object
+      required:
+        - id
+        - nome
+        - valor
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 1
+        nome:
+          type: string
+          example: Produto 1
+        valor:
+          type: number
+          format: float64
+          example: 1000

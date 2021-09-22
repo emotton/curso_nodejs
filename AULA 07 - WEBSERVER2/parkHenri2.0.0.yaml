@@ -1,0 +1,211 @@
+swagger: "2.0"
+info:
+  title: "API CURSO NODEJS"
+  version: "1.0.0"
+host: "localhost:3000"
+basePath: "/api"
+schemes:
+- "http"
+paths: 
+  /clientes:
+    get:
+      summary: listar clientes
+      operationId: listClientes
+      description: |
+       Obter lista de clientes
+      responses:
+        '200':
+          description: lista de clientes
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Cliente'
+    post:
+      summary: incluir novo cliente
+      description: ""
+      operationId: incluirCliente
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: ""
+        required: true
+        schema:
+          $ref: "#/definitions/Cliente"
+      responses:
+        "405":
+          description: "Invalid input"        
+  /clientes/{id}:
+    get:
+      summary: obter cliente pelo ID
+      description: ""
+      operationId: getClienteById
+      produces:
+      - "application/xml"
+      - "application/json"      
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: string
+          default: 1
+      responses:
+        "200":
+          description: "Cliente encontrado"
+          schema:
+            $ref: '#/definitions/Cliente'
+    put:
+      summary: atualizar cliente pelo ID
+      description: ""
+      operationId: updateClienteById
+      produces:
+      - "application/xml"
+      - "application/json"      
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: string
+          default: 1
+        - name: "body"
+          in: "body"
+          schema:
+            $ref: "#/definitions/Cliente"
+      responses:
+        "200":
+          description: "Cliente atualizado"
+    delete:
+      summary: excluir cliente pelo ID
+      description: ""
+      operationId: deleteClienteById
+      produces:
+      - "application/xml"
+      - "application/json"      
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: string
+          default: 1
+      responses:
+        "200":
+          description: "Cliente excluido"
+  /produtos:
+    get:
+      summary: listar produtos
+      operationId: listProdutos
+      description: |
+       Obter lista de produtos
+      responses:
+        '200':
+          description: lista de produtos
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Produto'
+    post:
+      summary: incluir novo produto
+      description: ""
+      operationId: incluirProduto
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: ""
+        required: true
+        schema:
+          $ref: "#/definitions/Produto"
+      responses:
+        "405":
+          description: "Invalid input"        
+  /produtos/{id}:
+    get:
+      summary: obter produto pelo ID
+      description: ""
+      operationId: getProdutoById
+      produces:
+      - "application/xml"
+      - "application/json"      
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: string
+          default: 1
+      responses:
+        "200":
+          description: "Produto encontrado"
+          schema:
+            $ref: '#/definitions/Produto'
+    put:
+      summary: atualizar produto pelo ID
+      description: ""
+      operationId: updateProdutoById
+      produces:
+      - "application/xml"
+      - "application/json"      
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: string
+          default: 1
+        - name: "body"
+          in: "body"
+          schema:
+            $ref: "#/definitions/Produto"
+      responses:
+        "200":
+          description: "Produto atualizado"
+    delete:
+      summary: excluir produto pelo ID
+      description: ""
+      operationId: deleteProdutoById
+      produces:
+      - "application/xml"
+      - "application/json"      
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: string
+          default: 1
+      responses:
+        "200":
+          description: "Produto excluido"
+definitions:
+  Cliente:
+    type: object
+    required:
+      - "id"
+      - "nome"
+    properties:
+      id:
+        type: integer
+        format: int64
+        example: 1
+      nome:
+        type: string
+        example: Cliente 1
+  Produto:
+    type: object
+    required:
+      - "id"
+      - "nome"
+      - "valor"
+    properties:
+      id:
+        type: integer
+        format: int64
+        example: 1
+      nome:
+        type: string
+        example: Produto 1
+      valor:
+        type: number
+        format: float64
+        example: 1000.00

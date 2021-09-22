@@ -4,13 +4,13 @@ const fs = require('fs')
 const path = require('path')
 
 app.get("/", (req, res)=>{
-    res.send("hello mundo !")
+    res.send("<html><body><h1 style='color:red;'>hello mundo !</h1></body></html>")
 })
 
-app.get("/index.html", (req,res)=>{
-    const index = fs.readFileSync(path.join(__dirname, 'pages/index.html'), 'utf-8')
-    console.log('Pagina vinda do app.get(index.html)')
-    res.send(index);
+app.get("/index.html", (req, res)=>{
+    console.log('pagina foi puxada pelo /index.html')
+    const indexHtml = fs.readFileSync("pages/index.html", "utf-8")
+    res.send(indexHtml)
 })
 
 app.get("/:nomePagina", (req,res)=>{

@@ -1,5 +1,4 @@
 const express = require('express')
-const { Http2ServerRequest } = require('http2')
 const { fileURLToPath } = require('url')
 const app = express()
 
