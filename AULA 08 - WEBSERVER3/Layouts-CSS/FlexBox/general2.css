@@ -22,7 +22,7 @@ html, body {
   text-align: center;
   height: 250px;
   width: 180px;
-  // flex-basis: 50%;
+  /* flex-basis: 50%; */
   margin-left: 5px;
   margin-right: 5px;
   padding-top: 5px;
@@ -34,7 +34,7 @@ html, body {
   text-align: center;
   height: 250px;
   width: 180px;
-  // flex-basis: 20%;
+  /* flex-basis: 20%; */
   margin-left: 5px;
   margin-right: 5px;
 }
