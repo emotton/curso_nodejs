@@ -17,3 +17,6 @@ function calcular(funcao){
 // Chamando a função calcula passando qual função eu quero executar
 calcular(soma);
 calcular(multiplicacao);
+calcular(function(x,y){
+    return x - y;
+});
