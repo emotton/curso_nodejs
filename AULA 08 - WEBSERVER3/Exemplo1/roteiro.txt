@@ -1,0 +1,7 @@
+0) criar o array de fornecedor no mock em \src\WebServer.js
+1) criar a rota \src\routes\fornecedorRouter.js
+2) criar o serviço \src\services\fornecedorService.js
+3) importar a rota no \src\WebServer.js
+4) associar a rota em app.use no \src\WebServer.js
+5) no _navbar.handlebars criar o novo item de menu
+6) criar a página dentro views\park-henri\<nome>.handlebars

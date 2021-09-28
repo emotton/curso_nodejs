@@ -1,9 +1,7 @@
 const express = require('express')
 const app = express()
-
-// const bodyParser = require('body-parser');
-const path = require('path');
 const favicon = require('serve-favicon');
+const path = require('path');
 const handlebars = require('express-handlebars');
 
 // Routes
@@ -32,13 +30,14 @@ app.use(express.urlencoded({ extended: true}))
 
 // layouts
 app.set('views', path.join(__dirname, 'views'));
+
 var hbs = handlebars.create({
     defaultLayout: 'main',
     partialsDir: [path.join(__dirname, 'views/partials')]
 });
 
 app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+app.set('view engine', 'handlebars')
 
 // public
 app.use(express.static(path.join(__dirname, 'public')));
@@ -58,3 +57,8 @@ app.get("/", (req, res)=>{
 app.listen(3000, ()=>{
     console.log('Servidor no ar na porta 3000')
 })
+
+
+
+
+
