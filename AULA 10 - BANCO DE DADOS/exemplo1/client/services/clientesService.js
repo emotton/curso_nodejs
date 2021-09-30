@@ -1,4 +1,4 @@
-const client = require('./connection')
+const client = require('./../connections/connection')
 
 module.exports = {
     getClientes: () => {

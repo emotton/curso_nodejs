@@ -1,5 +1,5 @@
-const {getClientes} = require('./clientesPoolService')
-const {getProdutos} = require('./produtosService')
+const {getClientes} = require('./services/clientesPoolService')
+const {getProdutos} = require('./services/produtosPoolService')
 
 getClientes().then((clientes)=>{
     console.log(clientes.rows)

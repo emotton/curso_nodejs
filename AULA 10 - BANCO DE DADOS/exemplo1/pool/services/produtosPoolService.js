@@ -1,4 +1,4 @@
-var pool = require('./connectionPool');
+var pool = require('./../connections/connectionPool');
 
 module.exports = {
     getProdutos: async function() {
