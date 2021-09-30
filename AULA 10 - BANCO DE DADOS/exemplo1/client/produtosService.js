@@ -1,10 +1,10 @@
 const client = require('./connection')
 
 module.exports = {
-    getClientes: () => {
+    getProdutos: () => {
         return new Promise((resolve, reject) =>{
-            client.query("select * from clientes").then( clientes => {
-                resolve(clientes.rows)
+            client.query("select * from produtos").then( produtos => {
+                resolve(produtos.rows)
             }).catch( err => reject(err.stack))
         })
     }
