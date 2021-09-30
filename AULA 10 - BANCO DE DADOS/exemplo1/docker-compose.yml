@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:9.6.23-alpine
+    container_name: postgres-curso
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "numsey"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db:/var/lib/postgresql/data
