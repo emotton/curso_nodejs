@@ -1,0 +1,21 @@
+<div class="conteudo-item mx-auto bg-white rounded shadow bordered mt-4">
+    <br />
+    <h4>Fornecedores</h4>   
+    <table class="table table-fixed table-striped">
+        <thead class="thead-dark">
+            <tr class="row">
+                <th class="col-sm-1">#</th>
+                <th class="col-sm-11">Nome</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each fornecedores}}
+            <tr class="row">
+                <td class="col-sm-1">{{id}}</td>
+                <td class="col-sm-11">{{nome}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <br>
+</div>
