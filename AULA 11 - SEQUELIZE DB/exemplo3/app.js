@@ -8,12 +8,17 @@
         
         await database.sync();
 
-        /*
-        const resultadoCreate = await Cliente.create({
+        await Cliente.create({
             nome: 'Akio Hayashi'
-        })
-        console.log(resultadoCreate);
-        */
+        });
+
+        await Cliente.create({
+            nome: 'Eduardo Motton'
+        });
+
+        await Cliente.create({
+            nome: 'Henrique Motton'
+        });
 
         const clientes = await Cliente.findAll();
         clientes.forEach(cliente => {
