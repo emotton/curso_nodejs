@@ -1,0 +1,21 @@
+{
+  "name": "exemplo1",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "emotton <emotton@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/emotton/curso_nodejs",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.0"
+  }
+}

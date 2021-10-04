@@ -1,4 +1,4 @@
-const { Pool } = require('pg');
+const { Pool} = require('pg');
 const dbConfig = require('./dbconfig.js');
 
 // ==> Conexão com a Base de Dados:

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARKHENRI SITE</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/general.css">
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+</head>
+<body>
+    {{>_navbar}}
+    <h1>SITE DO PARKHENRI</h1>
+    <div class="tela mt-4">
+        <div class="conteudo mt-3">
+            {{{body}}}
+        </div>
+    </div>
+    <footer class="rodape">
+        <div class="rodape-content">
+            <hr class="linha">
+            <img class="rodape-img" src="/images/logo-empresa.png">
+            <hr class="linha">
+            <span>&#xa9;&nbsp;copyright&nbsp;-</span>
+            <span>Versão 1.0.0</span>
+        </div>
+    </footer>     
+</body>
+</html>
