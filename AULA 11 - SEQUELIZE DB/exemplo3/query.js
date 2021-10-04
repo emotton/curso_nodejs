@@ -40,6 +40,8 @@
         eduardo.nome = 'Eduardo Motton';
         await eduardo.save();
 
+        database.close();
+
        
     } catch (error) {
         console.log(error);
