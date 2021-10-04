@@ -86,6 +86,89 @@ paths:
       responses:
         "200":
           description: Cliente excluido
+  /fornecedores:
+    get:
+      summary: listar fornecedores
+      operationId: listFornecedores
+      description: |
+        Obter lista de fornecedores
+      responses:
+        "200":
+          description: lista de fornecedores
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Fornecedor"
+    post:
+      summary: incluir novo fornecedor
+      description: ""
+      operationId: incluirFornecedor
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Fornecedor"
+        required: true
+      responses:
+        "405":
+          description: Invalid input
+  "/fornecedores/{id}":
+    get:
+      summary: obter fornecedor pelo ID
+      description: ""
+      operationId: getFornecedorById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            default: 1
+      responses:
+        "200":
+          description: Fornecedor encontrado
+          content:
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/Fornecedor"
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Fornecedor"
+    put:
+      summary: atualizar fornecedor pelo ID
+      description: ""
+      operationId: updateFornecedorById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            default: 1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Fornecedor"
+      responses:
+        "200":
+          description: Fornecedor atualizado
+    delete:
+      summary: excluir fornecedor pelo ID
+      description: ""
+      operationId: deleteFornecedorById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            default: 1
+      responses:
+        "200":
+          description: Fornecedor excluido
   /produtos:
     get:
       summary: listar produtos
@@ -186,6 +269,19 @@ components:
         nome:
           type: string
           example: Cliente 1
+    Fornecedor:
+      type: object
+      required:
+        - id
+        - nome
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 1
+        nome:
+          type: string
+          example: Fornecedor 1
     Produto:
       type: object
       required:
