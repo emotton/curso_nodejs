@@ -1,6 +1,7 @@
 (async () => {
     const database = require('./db');
     const Cliente = require('./cliente');
+    await database.sync();
  
     try {
         /*
@@ -30,8 +31,14 @@
             }
         });
 
+        let clienteNovo = new Cliente();
+        clienteNovo.nome = 'Jose Bezerra da Silva';
+        clienteNovo.save();
+
         const cliente1 = await Cliente.findByPk(2);
-        console.log(cliente1.dataValues)
+        cliente1.nome = 'Leo Secon';
+        cliente1.save();
+        //console.log(cliente1);
         
     } catch (error) {
         console.log(error);

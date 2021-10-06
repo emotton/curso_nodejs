@@ -8,6 +8,7 @@
         
         await database.sync();
 
+        /*
         await Cliente.create({
             nome: 'Akio Hayashi'
         });
@@ -20,18 +21,24 @@
             nome: 'Henrique Motton'
         });
 
+        await Cliente.create({
+            nome: 'Leo Secon'
+        });
+
         const clientes = await Cliente.findAll();
         clientes.forEach(cliente => {
             console.log(cliente.dataValues)
         });
+        */
 
-        /*
-        await Cliente.update({ nome: "Eduardo Fratoni Motton" }, {
+        
+        await Cliente.update({ nome: "Leonardo Secon" }, {
             where: {
-              id: 1
+              id: 4
             }
           });
 
+        /*
         await Cliente.destroy({
             where: {
                 id: 8

@@ -5,7 +5,7 @@ const {getClientes} = require('../../services/clientesService')
 
 router.get("/", async(req, res)=>{
     res.render("park-henri/clientes",
-    {clientes: await getClientes()})
+    {clientes:  await getClientes()})
 })
 
 module.exports = router;
