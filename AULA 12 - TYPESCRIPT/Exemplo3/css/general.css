@@ -4,3 +4,7 @@
     align-items: center;
     height: 400px;
 }
+
+p {
+    color: yellow;
+}

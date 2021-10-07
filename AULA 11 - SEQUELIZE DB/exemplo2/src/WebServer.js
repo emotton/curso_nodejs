@@ -3,6 +3,7 @@ const app = express();
 const favicon = require('serve-favicon');
 const path = require('path');
 const handlebars = require('express-handlebars');
+const cors = require('cors');
 
 // Routes
 const homeRouter = require('./routes/site/homeRouter');
@@ -29,6 +30,8 @@ const produtosRouterAPI = require('./routes/api/produtosRouterAPI');
 // Configurações
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
+app.use(cors());
+app.options('*', cors());
 
 // layouts
 app.set('views', path.join(__dirname, 'views'));
