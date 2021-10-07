@@ -11,7 +11,9 @@ TYPESCRIPT (Transpilação)
 P.S.
 
 Visual Studio Code
+
 <CTRL> + <SHIFT> + <b>
+
 -> abre para monitorar ou fazer build
 
 
