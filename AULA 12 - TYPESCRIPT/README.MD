@@ -34,3 +34,5 @@ https://www.typescriptlang.org/docs/
 https://www.typescriptlang.org/play
 
 https://www.w3schools.com/jquery
+
+https://api.jquery.com/
