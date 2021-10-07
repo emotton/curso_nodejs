@@ -12,7 +12,7 @@ P.S.
 
 Visual Studio Code
 
-<CTRL> + <SHIFT> + <b>
+CTRL + SHIFT + b
 
 -> abre para monitorar ou fazer build
 
