@@ -1,0 +1,11 @@
+{
+   "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs",
+    "outDir": "./build",
+    "esModuleInterop": true,
+    "strict": true,
+    "experimentalDecorators": true,
+    "strictNullChecks": true
+  }
+}
