@@ -1,0 +1,18 @@
+{
+  "name": "tailwind",
+  "version": "1.0.0",
+  "description": "npx tailwindcss-cli@latest build -o tailwind.css",
+  "main": "postcss.config.js",
+  "scripts": {
+    "dev": "npx tailwindcss build src/main.css -o src/style.css",
+    "build": "NODE_ENV=production npx tailwindcss -i ./src/main.css -o ./src/style.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.3.7",
+    "postcss": "^8.3.9",
+    "tailwindcss": "^2.2.17"
+  }
+}

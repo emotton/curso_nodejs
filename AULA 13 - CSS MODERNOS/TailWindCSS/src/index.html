@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-indigo-100">
+    <div class="grid grid-cols-1 lg:grid-cols-2">
+        <div class="bg-blue-600 lg:min-h-screen lg:flex lg:items-center p-8 sm:p-12">
+            <div class="flex-grow">
+                <h1 class="text-white text-center text-2xl sm:text-5xl mb-2">
+                    Seja bem-vindo(a)
+                </h1>
+                <p class="text-center text-blue-200 sm:text-lg">
+                    faça seu login para começar
+                </p>
+            </div>
+        </div>
+
+        <div class="lg:min-h-screen lg:flex lg:items-center p-12 lg:p-24 xl:p-36">
+            <div class="flex-grow bg-white shadow-xl rounded-md border border-gray-300 p-4">
+                <div class="sm:flex s:items-center">
+                    <img src="highlander.jpeg" alt="Highlander" class="sm:flex-shrink-0 mx-auto sm:mx-0 h-24 rounded-full">
+                    <div class="sm:ml-4 sm:text-left text-center">
+                        <p class="texto-xl">Highlander</p>
+                        <p class="text-sm text-gray-600">No final só pode haver um</p>
+                        <div class="mt-4">
+                            <button type="button" 
+                            class="text-red-500 hover:text-white hover:bg-red-500 border border-red-500 font-semibold rounded-md text-xs px-4 py-1 outline-none">
+                                Não é Highlander?
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <form class="flex w-full mt-8">
+                    <input type="password" placeholder="digite sua senha"
+                        class="flex-1 w-3/4 texto-gray-700 bg-gray-200 rounded-md hover:bg-white border border-gray-200 outline-none focus:bg-white py-2 px-4" />
+                    <button type="button" class="btn btn-blue w-1/4 ml-1">
+                        Entrar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

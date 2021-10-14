@@ -7,6 +7,19 @@ console.log(dia);
 console.log(DayWeek[1]);
 console.log(DayWeek[7]);
 
+function podeTrabalhar(diadasemana:DayWeek){
+    if(diadasemana == DayWeek.SABADO || 
+        diadasemana == DayWeek.DOMINGO){
+            return false;
+    } else {
+        return true;
+    }
+}
+
+console.log(podeTrabalhar(DayWeek.TERCA));
+console.log(podeTrabalhar(DayWeek.DOMINGO));
+
+
 enum TAXA{ICMS=18,IPI=7,PIS=10,COFINS=5}
 
 console.log("Taxa de ICMS : ", 10000*TAXA.ICMS/100);

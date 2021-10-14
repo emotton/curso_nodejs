@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-200">
+    <div class="grid grid-cols-1 lg:grid-cols-2">
+        <div class="flex-grow lg:min-h-screen p-2 sm:h-auto
+            md:text-3xl
+            rounded-md text-right text-yellow-600 m-4">
+            <span class="text-5xl">Cadastro</span>
+            <img src="highlander.jpeg" alt="Highlander" class="sm:flex-shrink-0 mx-auto sm:mx-0 h-24 rounded-full">
+            <hr />
+            <div class="flex flex-col mt-4 items-center">
+                <form class="flex flex-col items-start w-full ml-4 p-4 mr-4 shadow-md rounded-3xl border border-gray-300">
+                    <label>Nome Completo</label>
+                    <input type="text" placeholder="nome completo"
+                        class="w-3/4 texto-gray-700 bg-gray-200 rounded-md hover:bg-white border border-gray-200 outline-none focus:bg-white py-2 px-4" />
+                    <label>Cargo</label>
+                    <input type="text" placeholder="cargo"
+                        class="w-3/4 texto-gray-700 bg-gray-200 rounded-md hover:bg-white border border-gray-200 outline-none focus:bg-white py-2 px-4" />
+                    <label>Departamento</label>
+                    <input type="text" placeholder="departamento"
+                        class="w-3/4 texto-gray-700 bg-gray-200 rounded-md hover:bg-white border border-gray-200 outline-none focus:bg-white py-2 px-4" />
+                    <label>Lider</label>
+                    <input type="text" placeholder="lider"
+                        class="w-3/4 texto-gray-700 bg-gray-200 rounded-md hover:bg-white border border-gray-200 outline-none focus:bg-white py-2 px-4" />
+                    <label>Coordenador</label>
+                    <input type="text" placeholder="coordenador"
+                        class="w-3/4 texto-gray-700 bg-gray-200 rounded-md hover:bg-white border border-gray-200 outline-none focus:bg-white py-2 px-4" />
+                    <label>E-mail</label>
+                    <input type="text" placeholder="e-mail"
+                        class="w-3/4 texto-gray-700 bg-gray-200 rounded-md hover:bg-white border border-gray-200 outline-none focus:bg-white py-2 px-4" />
+                    <div class="flex w-full items-center justify-center">
+                        <button type="button" class="btn btn-blue w-1/4 ml-1 lg:text-lg">
+                            Cancelar
+                        </button>
+                        <button type="button" class="btn btn-blue w-1/4 ml-1 lg:text-lg">
+                            Confirmar
+                        </button>                        
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="flex-grow lg:min-h-screen p-2 sm:h-auto
+            md:text-3xl
+            text-right text-yellow-600 m-4">
+            <span class="p-4 text-5xl">Clientes</span>
+            <hr class="bg-yellow-600" />
+            <table class="table-auto w-full text-left mt-4 ml-4 text-yellow-500">
+                <thead class="">
+                    <tr class="">
+                        <th class="w-1/6">#</th>
+                        <th class="w-1/3">Nome</th>
+                        <th class="w-1/3 text-center">Ações</th>
+                    </tr>
+                    <tr>
+                        <th colspan="3">
+                            <hr class="bg-yellow-600 mr-6 mb-6 mt-6" />
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="">
+                    <tr>
+                        <td>1</td>
+                        <td>Eduardo Motton</td>
+                        <td>
+                            <div class="flex w-full items-center justify-center">
+                                <button type="button" class="btn btn-blue ml-1 lg:text-xs">
+                                    Alterar
+                                </button>
+                                <button type="button" class="btn btn-blue ml-1 lg:text-xs">
+                                    Excluir
+                                </button>                        
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Henrique Motton</td>
+                        <td>
+                            <div class="flex w-full items-center justify-center">
+                                <button type="button" class="btn btn-blue ml-1 lg:text-xs">
+                                    Alterar
+                                </button>
+                                <button type="button" class="btn btn-blue ml-1 lg:text-xs">
+                                    Excluir
+                                </button>                        
+                            </div>
+                        </td>                        
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Bheatriz Motton</td>
+                        <td>
+                            <div class="flex w-full items-center justify-center">
+                                <button type="button" class="btn btn-blue ml-1 lg:text-xs">
+                                    Alterar
+                                </button>
+                                <button type="button" class="btn btn-blue ml-1 lg:text-xs">
+                                    Excluir
+                                </button>                        
+                            </div>
+                        </td>                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
