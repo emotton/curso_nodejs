@@ -5,7 +5,11 @@ module.exports = {
   ],
   darkMode: false, 
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: theme => ({
+        "highlander": "url(highlander.jpeg)"
+      })
+    },
   },
   variants: {
     extend: {},

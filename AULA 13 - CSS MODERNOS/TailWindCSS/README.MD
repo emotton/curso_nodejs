@@ -20,6 +20,25 @@ npm i win-node-env
 
 NODE_ENV=production npx tailwindcss -i ./src/main.css -o ./src/style.css --minify
 
+
+Instalação
+==========
+npm i -g postcss postcss-cli
+-> Criar o arquivo tailwind.config.js
+npx tailwindcss init -p
+-> Criar arquivo postcss.config.js
+module.exports = {
+  plugins: [
+    require('tailwindcss'),
+    require('autoprefixer')
+  ]
+}
+-> criar no package.json
+ "tailwind": "postcss css/tailwind.css -o pages/main.css -w"
+
+
+
+
 Referências
 ===========
 https://tailwindui.com/
