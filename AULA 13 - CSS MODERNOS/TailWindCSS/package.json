@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "npx tailwindcss build src/main.css -o src/style.css",
     "build": "NODE_ENV=production npx tailwindcss -i ./src/main.css -o ./src/style.css --minify",
+    "build2": "NODE_ENV=production npx tailwindcss -i ./css/tailwind.css -o ./pages/main.css --minify",
     "tailwind": "postcss css/tailwind.css -o pages/main.css -w"
   },
   "keywords": [],
