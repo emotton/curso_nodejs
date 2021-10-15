@@ -1,0 +1,22 @@
+{
+  "name": "bootstrap5",
+  "homepage": "https://github.com/emotton/estudos",
+  "authors": [
+    "emotton <emotton@gmail.com>"
+  ],
+  "description": "Bootstrap 5",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "5",
+    "popper.js": "2.9.2"
+  }
+}

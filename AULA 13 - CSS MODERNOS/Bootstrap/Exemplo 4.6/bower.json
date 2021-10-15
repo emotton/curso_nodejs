@@ -1,0 +1,23 @@
+{
+  "name": "exemplo1",
+  "description": "Bootstrap - exemplo1",
+  "main": "index.js",
+  "authors": [
+    "Eduardo Motton"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/emotton/estudos",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "4.6",
+    "jquery": "3.5.1",
+    "popper.js": "1.16.1"
+  }
+}
