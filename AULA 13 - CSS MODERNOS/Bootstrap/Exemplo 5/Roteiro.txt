@@ -1,0 +1,129 @@
+1) demonstrar container de acordo com a responsividade (sm, md, lg, xl, xxl e fluid)
+
+    <style>
+        .amarelo {
+            background-color: yellow;
+            height: 200px; 
+        }
+    </style>
+
+    <div class="container-fluid amarelo mt-xl-2 mt-lg-5">
+    </div>
+
+2) demonstrar layout grid, com col, setando varios col(s) por resolução
+
+    <style>
+        .amarelo {
+            background-color: yellow;
+            height: 200px;
+        }
+
+        .azul {
+            background-color: blue;
+            height: 100px;
+        }
+    </style>
+    <div class="container-fluid amarelo mt-xl-2 mt-lg-5">
+        <div class="row">
+            <div class="col azul"></div>
+            <div class="col azul"></div>
+        </div>
+    </div>
+
+3) um dos div(s) col-1 (este será fixo com 1, os demais ocupam o restante)
+
+4) os dois div(s) com col-1 (ambos ocuparão apenas uma porção)
+
+5) ajustar o alimento horizontal colocando (justify-content-around,
+    justify-content-between, justify-content-center, justify-content-end,
+    justify-content-start)
+
+    <div class="row justify-content-around">
+
+6) colocar align-items-center; que inicialmente se esperaria que os div(s)
+    ficariam centralizados verticalmente; 
+    -> mostrar que o div dentro do container possui o tamanho dos conteudos;
+    -> para ocorrer centralização deve-se colocar w-100, para que o div 
+        ocupe 100% do div externo.
+
+7) demonstra que pode ser utilizado para alinhamento vertical
+    ( align-items-start, align-items-end, )
+
+8) demonstrar que para utilizar align-items-stretch; deve-se retirar a altura 
+    fixa do objeto, para que o stretch faça efeito.
+
+9) incluir mais uma div para demonstrar que pode ser setado individualmente
+
+    .verde {
+        background-color: green;
+    }
+
+    <div class="col-1 align-self-stretch verde"></div>
+
+10) podendo também alterar o primeiro div para ajustar o alinhamento individual
+
+    <div class="col-1 align-self-end azul"></div>
+
+11) setando valores para col(s); demonstrando que cada div assumirá x porção
+
+    <div class="container-fluid amarelo mt-xl-2 mt-lg-5">
+        <div class="row h-100 justify-content-around align-items-center">
+            <div class="col-3 align-self-end azul"></div>
+            <div class="col-1 azul"></div>
+            <div class="col-3 align-self-stretch verde"></div>
+        </div>
+    </div>
+
+12) remover alinhamentos individuais, colocar height do verde
+
+a) setar col(s) para variarem de acordo com a resolução "md"
+
+    <style>
+        .amarelo {
+            background-color: yellow;
+            height: 260px;
+        }
+
+        .azul {
+            background-color: blue;
+            height: 100px;
+        }
+
+        .verde {
+            background-color: green;
+            height: 100px;
+        }
+    </style>
+
+    <div class="container-fluid amarelo mt-xl-2 mt-lg-5">
+        <div class="row h-100 justify-content-around align-items-center">
+            <div class="col-md-5 col-lg-3 azul"></div>
+            <div class="col-md-5  col-lg-1 azul"></div>
+            <div class="col-md-12 col-lg-3 verde"></div>
+        </div>
+    </div>
+
+b) setar col(s) para se ajustar a resolução "sm"
+
+    <div class="container-fluid amarelo mt-xl-2 mt-lg-5">
+        <div class="row h-100 justify-content-around align-items-center">
+            <div class="col-sm-12 col-md-5 col-lg-3 azul"></div>
+            <div class="col-sm-12 col-md-5  col-lg-1 azul"></div>
+            <div class="col-sm-12 col-md-12 col-lg-3 verde"></div>
+        </div>
+    </div>
+
+
+
+
+
+align-items-stretch
+
+<div class="container">
+  <div class="row row-cols-2">
+    <div class="col">Column</div>
+    <div class="col">Column</div>
+    <div class="col">Column</div>
+    <div class="col">Column</div>
+  </div>
+</div>
