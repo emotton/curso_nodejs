@@ -1,3 +1,6 @@
+##### index-row.html #####
+
+
 1) demonstrar container de acordo com a responsividade (sm, md, lg, xl, xxl e fluid)
 
     <style>
@@ -36,7 +39,7 @@
 
 5) ajustar o alimento horizontal colocando (justify-content-around,
     justify-content-between, justify-content-center, justify-content-end,
-    justify-content-start)
+    justify-content-start, justify-content-evenly)
 
     <div class="row justify-content-around">
 
@@ -114,16 +117,217 @@ b) setar col(s) para se ajustar a resolução "sm"
     </div>
 
 
+##### index-row-cols.html #####
 
+13) demonstrar layout row-cols de forma ajustada por resolução para a 
+    quantidade de colunas.
 
+    <style>
+        .amarelo {
+            background-color: yellow;
+            height: 360px;
+        }
 
-align-items-stretch
+        .azul {
+            background-color: blue;
+            height: 100px;
+        }
 
-<div class="container">
-  <div class="row row-cols-2">
-    <div class="col">Column</div>
-    <div class="col">Column</div>
-    <div class="col">Column</div>
-    <div class="col">Column</div>
-  </div>
-</div>
+        .verde {
+            background-color: green;
+            height: 100px;
+        }
+
+        .vermelho {
+            background-color: red;
+            height: 100px;
+        }
+
+        .cinza {
+            background-color: gray;
+            height: 100px;
+        }
+    </style>
+    <div class="container">
+        <div class="row row-cols-md-2 row-cols-lg-4">
+            <div class="azul">Column</div>
+            <div class="verde">Column</div>
+            <div class="vermelho">Column</div>
+            <div class="cinza">Column</div>
+        </div>
+    </div>
+
+##### index-row-altura.html #####
+
+14) demonstrar altura do view port vh-100
+
+    <div class="container vh-100">
+        <div class="row h-100">
+            <div class="col-sm-12">
+              <div class="card card-block w-25 h-25">Card</div>
+            </div>
+         </div>
+    </div>
+
+15) demonstrar o Gutters
+
+    <style>
+        .amarelo {
+            background-color: yellow;
+            height: 360px;
+        }
+
+        .azul {
+            background-color: blue;
+            height: 100px;
+        }
+
+        .verde {
+            background-color: green;
+            height: 100px;
+        }
+
+        .vermelho {
+            background-color: red;
+            height: 100px;
+        }
+
+        .cinza {
+            background-color: gray;
+            height: 100px;
+        }
+
+        .preta {
+            background-color: black;
+            height: 100px;
+        }
+    </style>
+    <div class="container vh-100">
+        <div class="row h-100 gy-3 mt-2">
+            <div class="col azul">
+                <div class="preta"></div>
+            </div>
+            <div class="col verde">
+                <div class="preta"></div>
+            </div>
+            <div class="col vermelho">
+                <div class="preta"></div>
+            </div>
+            <div class="col cinza">
+                <div class="preta"></div>
+            </div>
+         </div>
+    </div>
+
+##### index-flex.html #####
+
+16) Container Flex Row
+
+    <div class="container vh-100">
+        <div class="d-flex flex-row bd-highlight mb-3">
+            <div class="p-2 bd-highlight azul">Flex item 1</div>
+            <div class="p-2 bd-highlight azul">Flex item 2</div>
+            <div class="p-2 bd-highlight azul">Flex item 3</div>
+          </div>
+          <div class="d-flex flex-row-reverse bd-highlight">
+            <div class="p-2 bd-highlight azul">Flex item 1</div>
+            <div class="p-2 bd-highlight azul">Flex item 2</div>
+            <div class="p-2 bd-highlight azul">Flex item 3</div>
+          </div>
+    </div>
+
+##### index-flex-col.html #####
+
+17) Container Flex Column
+
+    .vermelho {
+        background-color: red;
+        width: 100px;
+    }
+
+    <div class="container vh-100">
+        <div class="d-flex flex-column bd-highlight mb-3">
+            <div class="p-2 bd-highlight vermelho">
+                <div class="preta text-center">
+                    <span class="bg-white">1</span>
+                </div>
+            </div>
+            <div class="p-2 bd-highlight vermelho">
+                <div class="preta text-center">
+                    <span class="bg-white">2</span>
+                </div>
+            </div>
+            <div class="p-2 bd-highlight vermelho">
+                <div class="preta text-center">
+                    <span class="bg-white">3</span>
+                </div>
+            </div>
+          </div>
+          <div class="d-flex flex-column-reverse bd-highlight">
+            <div class="p-2 bd-highlight vermelho">
+                <div class="preta text-center">
+                    <span class="bg-white">1</span>
+                </div>
+            </div>
+            <div class="p-2 bd-highlight vermelho">
+                <div class="preta text-center">
+                    <span class="bg-white">2</span>
+                </div>
+            </div>
+            <div class="p-2 bd-highlight vermelho">
+                <div class="preta text-center">
+                    <span class="bg-white">3</span>
+                </div>
+            </div>
+          </div>
+    </div>
+
+##### index-flex-direction.html #####
+
+18) Flex direction com width e height com breakpoint
+
+    <div class="container vh-100">
+        <div class="d-flex 
+            flex-column justify-content-between align-items-center
+            flex-lg-row justify-content-lg-around  align-items-lg-start
+            verde">
+            <div class="p-2 bd-highlight h-lg-100 h-25 w-100 w-lg-25 azul">Flex item 1</div>
+            <div class="p-2 bd-highlight h-lg-100 h-25 w-100 w-lg-25 azul">Flex item 2</div>
+            <div class="p-2 bd-highlight h-lg-100 h-25 w-100 w-lg-25 azul">Flex item 3</div>
+          </div>
+    </div>
+
+    $utilities: (
+    "height": (
+        property: height,
+        responsive: true,
+        class: h,
+        values: (
+        25: 25%,
+        50: 50%,
+        75: 75%,
+        100: 100%,
+        auto: auto
+        )
+    ),
+    "width": (
+        property: width,
+        responsive: true,
+        class: w,
+        values: (
+        25: 25%,
+        50: 50%,
+        75: 75%,
+        100: 100%,
+        auto: auto
+        )
+    )
+    );    
+
+##### index-colors.html #####
+
+19) Demonstrar a customização de cores
+
+    $primary: #6a040f;
+    $danger: #e63946;
+    $info: #ffafcc;

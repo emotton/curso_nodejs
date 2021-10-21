@@ -1,8 +1,51 @@
-// Declaração das variáveis
-$primary: #6a040f;
-$danger: #e63946;
-$info: #ffafcc;
 
+// Declaração das variáveis
+// $primary: #6a040f;
+// $danger: #e63946;
+// $info: #ffafcc;
+
+$theme-colors: (
+  "primary":    #0d6efd,
+  "secondary":  #6c757d,
+  "success":    #198754,
+  "info":       #0dcaf0,
+  "warning":    #ffc107,
+  "danger":     #dc3545,
+  "light":      #f8f9fa,
+  "dark":       #212529,
+  "banana":     #ffff00,
+  "azulao":       #210669
+);
+
+$utilities: (
+  "height": (
+    property: height,
+    responsive: true,
+    class: h,
+    values: (
+      25: 25%,
+      50: 50%,
+      75: 75%,
+      100: 100%,
+      auto: auto
+    )
+  ),
+  "width": (
+    property: width,
+    responsive: true,
+    class: w,
+    values: (
+      25: 25%,
+      50: 50%,
+      75: 75%,
+      100: 100%,
+      auto: auto
+    )
+  )
+);
 // Importação do Bootstrap
 @import "public/lib/bootstrap/scss/bootstrap.scss";
+
+
+
 

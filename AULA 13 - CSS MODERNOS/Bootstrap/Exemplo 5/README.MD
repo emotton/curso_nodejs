@@ -9,6 +9,16 @@ bower install popper.js@2.9.2 --save
 
 ===============================================================
 
+Instalar Sass
+
+npm install -g sass
+
+---------------------------------------------------------------
+
+Executar compilação
+
+sass <origem.scss> <destino.css>
+
 
 Plugins
 =======
