@@ -376,6 +376,7 @@ Ferramentas
 ===========
 https://fonts.google.com/
 https://digitalsynopsis.com/design/beautiful-color-gradient-palettes/
+https://uigradients.com/
 
 Referências
 ===========
