@@ -32,3 +32,11 @@ function imprimir(nome, idade){
   console.log(nome?nome:'')
   console.log(idade?idade:'')
 }
+
+// Template String
+
+var codigo = 123
+
+var usuario = `Sou o código : ${codigo}`
+
+console.log(usuario)
