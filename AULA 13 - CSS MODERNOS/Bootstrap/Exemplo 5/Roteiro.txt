@@ -37,7 +37,7 @@
 
 4) os dois div(s) com col-1 (ambos ocuparão apenas uma porção)
 
-5) ajustar o alimento horizontal colocando (justify-content-around,
+5) ajustar o alinhamento horizontal colocando (justify-content-around,
     justify-content-between, justify-content-center, justify-content-end,
     justify-content-start, justify-content-evenly)
 
