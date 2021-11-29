@@ -8,6 +8,7 @@ const {getClientes, getClienteById,
     require('../../services/clientesService')
 
 router.get("/", (req, res)=>{
+    console.log('chamada');
     res.status(200).json(getClientes())
 })
 
