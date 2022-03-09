@@ -1,0 +1,12 @@
+{
+  "name": "modules",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mymodule.js",
+  "scripts": {
+    "dev": "node --es-module-specifier-resolution=node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
