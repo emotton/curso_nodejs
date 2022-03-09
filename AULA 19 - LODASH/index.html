@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exemplo Lodash</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <script>
+      const lista = [
+        { id: 1, nome: "Eduardo", idade: 52 },
+        { id: 2, nome: "Bheatriz", idade: 16 },
+        { id: 3, nome: "Henrique", idade: 22 },
+        { id: 4, nome: "João", idade: 23 },
+        { id: 5, nome: "Célia", idade: 39 },
+      ];
+
+      var index = _.findIndex(lista, function (o) {
+        return o.nome == "João";
+      });
+      console.log(index);
+
+      _.forEach(lista, function (o) {
+        console.log(o);
+      });
+
+      var filter = _.filter(lista, function (o) {
+        return o.idade > 18;
+      });
+      console.log(filter);
+
+      var first = _.first(lista);
+      console.log(first);
+
+      var camel = _.camelCase("eduardo fratoni motton");
+      console.log(camel);
+
+      var kebabCase = _.kebabCase("eduardo fratoni motton");
+      console.log(kebabCase);
+
+      var capitalize = _.capitalize("eduardo fratoni motton");
+      console.log(capitalize);
+    </script>
+  </head>
+  <body></body>
+</html>
